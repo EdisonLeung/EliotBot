@@ -61,6 +61,7 @@ export interface ParticipantInfo {
     summoner1Id: number;
     summoner2Casts: number;
     summoner2Id: number;
+    teamPosition: string;
     totalDamageDealt: number;
     totalDamageDealtToChampions: number;
     totalDamageTaken: number;
@@ -195,7 +196,7 @@ export function matchInfoMarkdown(matches: MatchInfo[], puuid: string, brief: bo
         return "" +
         `Game Mode: ${match.info.gameMode}\n` + 
         `Win: ${playerInfo.win}\n` + 
-        `Champion: ${playerInfo.championName} (Role: ${playerInfo.role})\n` + 
+        `Champion: ${playerInfo.championName} (Role: ${playerInfo.teamPosition})\n` + 
         `Summoner Spells: ${ID_TO_SUMMONER_SPELL[playerInfo.summoner1Id]} (x${playerInfo.summoner1Casts} use), ${ID_TO_SUMMONER_SPELL[playerInfo.summoner2Id]} (x${playerInfo.summoner2Casts} use)\n` +
         `Kills: ${playerInfo.kills}\n` +
         `Deaths: ${playerInfo.deaths}\n` +
